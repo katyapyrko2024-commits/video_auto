@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       deployment_target:
-        description: select tests to run
+        description: Select tests to run
         required: true
         type: choice
         default: all
@@ -23,6 +23,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV
       - name: install dependencies
         run: pip install -r requirements.txt
       - name: Run tests
