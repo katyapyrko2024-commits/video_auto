@@ -1,0 +1,7 @@
+../.idea
+venv
+src/gecodr.py
+.idea/
+__pycache__/
+pages/__pycache__/
+src/__pycache__/
